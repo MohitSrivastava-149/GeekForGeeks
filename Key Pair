@@ -1,0 +1,14 @@
+//Given an array Arr of N positive integers and another number X. Determine whether or not there exist two elements in Arr whose sum is exactly X.
+
+
+class Solution {
+    boolean hasArrayTwoCandidates(int arr[], int n, int x) {
+        HashSet<Integer> hashset = new HashSet<>();
+        for(int item : arr){
+            if(hashset.contains(x-item))
+                return true;
+            hashset.add(item);
+        }
+        return false;
+    }
+}
