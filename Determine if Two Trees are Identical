@@ -1,3 +1,7 @@
+//Given two binary trees, the task is to find if both of them are identical or not.
+//Note: You need to return true or false, the printing is done by the driver code.
+
+
 class Solution
 {
     boolean isIdentical(Node root1, Node root2)
