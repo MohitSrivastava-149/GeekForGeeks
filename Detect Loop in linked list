@@ -1,0 +1,21 @@
+//Given a linked list of N nodes. The task is to check if the linked list has a loop. Linked list can contain self loop.
+
+
+class Solution {
+    //Function to check if the linked list has a loop.
+    public static boolean detectLoop(Node head){
+        if(head == null ||head.next == null){
+            return false;
+        }
+        Node temp = head;
+        Node prev = head;
+        while((temp.next != null) && (temp.next.next != null)){
+            temp = temp.next.next;
+            prev = prev.next;
+            if(temp == prev){
+                return true;
+            }
+        }
+        return false;
+    }
+}
