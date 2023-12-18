@@ -1,0 +1,17 @@
+class Solution
+{
+    int getMiddle(Node head)
+    {
+        Node temp1 = head;
+        Node temp2 = head;
+        int length = 0;
+        while(temp1.next != null){
+            length++;
+            if(length%2 == 1){
+                temp2 = temp2.next;
+            }
+            temp1 = temp1.next;
+        }
+        return temp2.data;
+    }
+}
