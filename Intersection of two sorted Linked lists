@@ -1,0 +1,33 @@
+class Solution
+{
+   public static Node findIntersection(Node head1, Node head2)
+    {
+        Node Flist = head1;
+        Node Slist = head2;
+        Node head = null;
+        Node currentNode = null;
+        
+        while(Flist!= null && Slist != null){
+            if(Flist.data == Slist.data){
+                if(head == null){
+                    Node newNode = new Node(Flist.data);
+                    head = newNode;
+                    currentNode = newNode;
+                }else{
+                    Node newNode = new Node(Flist.data);
+                    currentNode.next = newNode;
+                    currentNode = currentNode.next;
+                }
+                Flist = Flist.next;
+                Slist = Slist.next;
+            }else{
+                if(Flist.data < Slist.data){
+                    Flist = Flist.next;
+                }else{
+                    Slist = Slist.next;
+                }
+            }
+        }
+        return head;
+    }
+}
