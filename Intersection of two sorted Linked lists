@@ -1,3 +1,8 @@
+//Given two linked lists sorted in increasing order, create a new linked list representing the intersection of the two linked lists. 
+//The new linked list should be made with without changing the original lists.
+//Note: The elements of the linked list are not necessarily distinct.
+
+
 class Solution
 {
    public static Node findIntersection(Node head1, Node head2)
