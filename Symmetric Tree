@@ -1,0 +1,24 @@
+//Given a Binary Tree. Check whether it is Symmetric or not, i.e. whether the binary tree is a Mirror image of itself or not.
+
+class GfG
+{
+    // return true/false denoting whether the tree is Symmetric or not
+    public static boolean isSymmetric(Node root)
+    {
+        Queue<Node> q=new LinkedList<>();
+        q.add(root);
+        q.add(root);
+        while(!q.isEmpty()){
+            Node lp=q.remove();
+            Node rp=q.remove();
+            if(lp==null&&rp==null)continue;
+            if(lp==null||rp==null)return false;
+            if(lp.data!=rp.data)return false;
+            q.add(lp.left);
+            q.add(rp.right);
+            q.add(lp.right);
+            q.add(rp.left);
+        }
+        return true;
+    }
+}
