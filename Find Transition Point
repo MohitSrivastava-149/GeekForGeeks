@@ -1,0 +1,21 @@
+//Given a sorted array containing only 0s and 1s, find the transition point, i.e., the first index where 1 was observed, and before that, only 0 was observed.
+
+
+class Solution {
+    int transitionPoint(int arr[], int n) {
+    int low = 0;
+    int high = n-1;
+    int pa = -1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == 1) {
+            pa = mid;
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return pa;
+  }
+}
