@@ -1,3 +1,7 @@
+//Given a matrix(2D array) M of size N*N consisting of 0s and 1s only. The task is to find the column with maximum number of 0s. 
+//If more than one column exists, print the one which comes first. If the maximum number
+
+
 class Solution
 {
     int columnWithMaxZeros(int arr[][], int n)
