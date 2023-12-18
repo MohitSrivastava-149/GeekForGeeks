@@ -1,0 +1,14 @@
+class Solution {
+    int missingNumber(int array[], int n) {
+        // Arrays.sort(arr);
+        //int n = arr.length+1;         //expected number of elements in array
+        int total_sum=(n*(n+1))/2;
+        int sum=0;
+        for(int i=0; i<array.length; i++)
+        {
+            sum=sum+array[i];       
+        }
+        int result = total_sum - sum;
+        return result;
+    }
+}
