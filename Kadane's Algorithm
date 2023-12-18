@@ -1,0 +1,20 @@
+class Solution{
+    long maxSubarraySum(int arr[], int n){
+        
+        long maxSum = arr[0];
+        long sum = arr[0];
+        
+        for(int i=1; i<n; i++){
+            if(sum >= 0){
+                sum = sum + arr[i];
+            }
+            else if(sum < 0){
+                sum = arr[i];
+            }
+            maxSum = Math.max(sum, maxSum);
+        }
+        return maxSum;
+        
+    }
+    
+}
