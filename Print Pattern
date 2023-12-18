@@ -1,0 +1,16 @@
+//Print a sequence of numbers starting with N, without using loop, where replace N with N - 5, until N > 0. After that replace N with N + 5 until N regains its initial value.
+
+
+class Solution{
+    List<Integer> ans = new ArrayList<>();
+    public List<Integer> pattern(int N){
+        if(N <= 0){
+            ans.add(N);
+            return ans;
+        }
+        ans.add(N);
+        pattern(N-5);
+        ans.add(N);
+        return ans;
+    }
+}
