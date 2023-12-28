@@ -1,0 +1,23 @@
+//Given two arrays a[] and b[] respectively of size n and m, the task is to print the count of elements in the intersection (or common elements) of the two arrays.
+//For this question, the intersection of two arrays can be defined as the set containing distinct common elements between the two arrays. 
+
+
+class Solution {
+    // Function to return the count of the number of elements in
+    // the intersection of two arrays.
+    public static int NumberofElementsInIntersection(int arr1[], int arr2[], int n, int m) {
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> set2 = new HashSet<>();
+        int big = (arr1.length < arr2.length) ? n : m;
+        int count = 0;
+        for(int i = 0; i < n; i++){
+            set1.add(arr1[i]);
+        }
+        for(int j = 0; j < m; j++){
+           if(set1.contains(arr2[j]) && set2.add(arr2[j]) == true){
+                count++;
+            }
+        }
+        return count;
+    }
+};
