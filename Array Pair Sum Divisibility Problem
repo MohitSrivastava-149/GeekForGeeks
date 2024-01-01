@@ -1,0 +1,22 @@
+//Given an array of integers nums and a number k, write a function that returns true if given array can be divided into pairs such that sum of every pair is divisible by k.
+
+
+class Solution {
+    public boolean canPair(int[] nums, int k) {
+        if(nums.length % 2 != 0){
+            return false;
+        }
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0; i<nums.length; i++){
+            int rem = k - (nums[i] % k);
+            if(set.contains(rem)){
+                set.remove(rem);
+            }
+            else{
+                set.add(nums[i]%k == 0 ? k:nums[i] % k);
+            }
+        }
+        return set.isEmpty();
+    }
+        
+}
